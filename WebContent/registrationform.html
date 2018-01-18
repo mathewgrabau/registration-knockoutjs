@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html" />
+		<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
 		<title>Knockout: Registration Form Example</title>
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<!-- jquery -->
@@ -15,6 +15,33 @@
 		<div class="container">
 			<div class="page-header"><h1>Customer Registration Form</h1></div>
 			<form data-bind="submit: RegistrationForm.submit">
+				<fieldset>
+					<div class="row">
+						<div class="col-md-12">
+							<h4>Personal Information</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="firstNameInput">First Name</label>
+								<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.firstName" id="firstNameInput" placeholder="Enter first name">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="middleNameInput">Middle Name</label>
+								<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.middleName" id="middleNameInput" placeholder="Enter middle name">
+							</div>
+						</div>
+						<div class="col-md-4">
+								<div class="form-group">
+									<label for="lastNameInput">Last Name</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.lastName" id="lastNameInput" placeholder="Enter last name">
+								</div>
+							</div>
+					</div>
+				</fieldset>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
