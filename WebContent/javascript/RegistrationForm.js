@@ -7,7 +7,43 @@ var RegistrationForm = function() {
 			middleName: ko.observable(),
 			lastName: ko.observable()
 		}
-	}
+	};
+    
+    var titleOptions = [
+        {
+            value: 'Mr',
+            setTitle: function() {
+                RegistrationForm.customer.personalInfo.title('Mr');
+            }
+        },
+        {
+            value: 'Mrs',
+            setTitle: function() {
+                RegistrationForm.customer.personalInfo.title('Mrs');
+            }
+        },
+        {
+            value: 'Miss',
+            setTitle: function() {
+                RegistrationForm.customer.personalInfo.title('Miss');                
+            }
+        },
+        {
+            value: 'Dr',
+            setTitle: function() {
+                RegistrationForm.customer.personalInfo.title('Dr');
+            }
+        }
+    ];
+    
+    /* computed observable for title drop down text change */
+    var titleSelect = ko.pureComputed(function() {
+       if (customer.personalInfo.title() == null) {
+           return 'select';
+       } else {
+           return customer.personalInfo.title();
+       }
+    });
 
 	/* Form submission */
 	
@@ -27,6 +63,8 @@ var RegistrationForm = function() {
 
 	return {
 		customer: customer,
-		submit: submit
+		submit: submit,
+        titleOptions: titleOptions,
+        titleSelect: titleSelect
 	};
 }();
