@@ -2,6 +2,7 @@ var RegistrationForm = function() {
 
 	var customer = {
 		personalInfo: {
+			title: ko.observable(),
 			firstName: ko.observable(),
 			middleName: ko.observable(),
 			lastName: ko.observable()
