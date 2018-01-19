@@ -55,6 +55,40 @@
 							</div>
 					</div>
 				</fieldset>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Contact Details</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="phoneNumberInput">Phone Number</label>
+                                <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contactDetails.phoneNumber" id="phoneNumberInput" placeholder="Enter phone number">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="emailAddressInput">Email</label>
+                                <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contactDetails.emailAddress" id="emailAddressInput" placeholder="Enter email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Preferred Contact</label>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" value="phone" name="preferredContactInput" data-bind="checked: RegistrationForm.customer.contactDetails.preferredContact">Phone
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" value="email" name="preferredContactInput" data-bind="checked: RegistrationForm.customer.contactDetails.preferredContact">Email
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
