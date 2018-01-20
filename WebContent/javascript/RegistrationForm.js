@@ -11,6 +11,29 @@ var RegistrationForm = function() {
             phoneNumber: ko.observable(),
             emailAddress: ko.observable(),
             preferredContact: ko.observable()
+        },
+        address: {
+            residential: {
+                street: ko.observable(),
+                city: ko.observable(),
+                postalCode: ko.observable(),
+                country: ko.observable()
+            },
+            postal: {
+                type: ko.observable(),
+                streetAddress: {
+                    street: ko.observable(),
+                    city: ko.observable(),
+                    postalCode: ko.observable(),
+                    country: ko.observable()
+                },
+                poBoxAddress: {
+                    poBox: ko.observable(),
+                    city: ko.observable(),
+                    postalCode: ko.observable(),
+                    country: ko.observable()
+                }
+            }
         }
 	};
     
