@@ -35,7 +35,8 @@ var RegistrationForm = function() {
                 }
             }
 		},
-		creditCards: ko.observableArray()
+		creditCards: ko.observableArray(),
+		interests: ko.observableArray()
 	};
     
     var titleOptions = [
