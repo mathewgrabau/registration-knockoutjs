@@ -34,7 +34,8 @@ var RegistrationForm = function() {
                     country: ko.observable()
                 }
             }
-        }
+		},
+		creditCards: ko.observableArray()
 	};
     
     var titleOptions = [
@@ -71,7 +72,19 @@ var RegistrationForm = function() {
        } else {
            return customer.personalInfo.title();
        }
-    });
+	});
+	
+	var addCreditCard = function() {
+		customer.creditCards.push({
+			name: ko.observable(),
+			number: ko.observable(),
+			expiryDate: ko.observable()
+		});
+	};
+
+	var deleteCreditCard = function(card) {
+		customer.creditCards.remove(card);
+	};
 
 	/* Form submission */
 	
@@ -84,6 +97,8 @@ var RegistrationForm = function() {
 	
 	
 	var init = function() {
+		// add first credit card
+		addCreditCard();
 		ko.applyBindings(RegistrationForm);
 	};
 
@@ -93,6 +108,8 @@ var RegistrationForm = function() {
 		customer: customer,
 		submit: submit,
         titleOptions: titleOptions,
-        titleSelect: titleSelect
+		titleSelect: titleSelect,
+		addCreditCard: addCreditCard,
+		deleteCreditCard: deleteCreditCard
 	};
 }();
