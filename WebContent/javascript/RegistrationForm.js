@@ -87,6 +87,25 @@ var RegistrationForm = function() {
 		customer.creditCards.remove(card);
 	};
 
+	var traverseAndClearModel = function(jsonObject) {
+		$.each(jsonObject, function(key, value) {
+			if (ko.isObservable(value)) {
+				if (value.removeAll !== undefined) {
+					value.removeAll();
+				} else {
+					value(null);
+				}
+			} else {
+				traverseAndClearModel(value);
+			}
+		});
+	};
+
+	var clear = function() {
+		traverseAndClearModel(customer);
+		addCreditCard();
+	};
+
 	/* Form submission */
 	
 	
@@ -111,6 +130,7 @@ var RegistrationForm = function() {
         titleOptions: titleOptions,
 		titleSelect: titleSelect,
 		addCreditCard: addCreditCard,
-		deleteCreditCard: deleteCreditCard
+		deleteCreditCard: deleteCreditCard,
+		clear: clear
 	};
 }();
