@@ -131,7 +131,68 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
+					</div>
+					<div data-bind="visible: RegistrationForm.customer.address.postal.type() === 'street'">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="postalStreetInput">Street Address</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.streetAddress.street" id="postalStreetInput" placeholder="Enter street address">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form-group">
+								<label for="postalCityInput">City</label>
+								<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.streetAddress.city" id="postalCityInput" placeholder="Enter city">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+								<label for="postalPostalCodeInput">Postal Code</label>
+								<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.streetAddress.postalCode" id="postalPostalCodeInput" placeholder="Enter postal code">
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="form-group">
+									<label for="postalCountryInput">Country</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.streetAddress.country" 
+										id="postalCountryInput" placeholder="Enter country">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-bind="visible: RegistrationForm.customer.address.postal.type() === 'poBox'">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="poBoxInput">PO Box</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.poBoxAddress.poBox" id="poBoxInput" placeholder="Enter PO Box">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form-group">
+									<label for="poBoxCityInput">City</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.poBoxAddress.city" id="poBoxCityInput" placeholder="Enter city">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="poBoxPostalCodeInput">Postal code</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.poBoxAddress.postalCode" id="poBoxPostalCodeInput" placeholder="Enter postal code">
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="form-group">
+									<label for="poBoxCountryInput">Country</label>
+									<input type="text" class="form-control" data-bind="value: RegistrationForm.customer.address.postal.poBoxAddress.country" id="poBoxCountryInput" placeholder="Enter country">
+								</div>
+							</div>
+						</div>	
+					</div>
                 </fieldset>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
